@@ -6,6 +6,8 @@ T'Pico is a fork of [Pico CSS](https://github.com/picocss/pico), based on its fi
 
 No JavaScript, Sass, utility classes, or custom HTML attributes are required to use the framework.
 
+What to see it in action? Check out this demo: https://jsfiddle.net/bLpsf2jd/
+
 ## Why the Name?
 
 The name **T'Pico** carries forward the naming convention of **T'CSS**, a CSS project inspired in part by the Cajun culture of South Louisiana.
