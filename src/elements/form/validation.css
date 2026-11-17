@@ -1,0 +1,99 @@
+@layer elements {
+	:where(input, select, textarea) {
+		--t-pico-form-element-invalid-active-border-color: light-dark(
+			color-mix(in srgb, var(--t-pico-red-500) 75%, var(--t-pico-zinc-350)),
+			color-mix(in srgb, var(--t-pico-red-500) 75%, var(--t-pico-zinc-700))
+		);
+		--t-pico-form-element-invalid-border-color: light-dark(
+			color-mix(in srgb, var(--t-pico-red-500), var(--t-pico-zinc-350)),
+			color-mix(in srgb, var(--t-pico-red-500), var(--t-pico-zinc-700))
+		);
+		--t-pico-form-element-invalid-focus-color: var(--t-pico-form-element-invalid-active-border-color);
+		--t-pico-form-element-valid-active-border-color: light-dark(
+			color-mix(in srgb, var(--t-pico-jade-450) 75%, var(--t-pico-zinc-350)),
+			color-mix(in srgb, var(--t-pico-jade-450) 75%, var(--t-pico-zinc-700))
+		);
+		--t-pico-form-element-valid-border-color: light-dark(
+			color-mix(in srgb, var(--t-pico-jade-450), var(--t-pico-zinc-350)),
+			var(--t-pico-jade-700)
+		);
+		--t-pico-form-element-valid-focus-color: var(--t-pico-form-element-valid-active-border-color);
+	}
+
+	:where(input, select, textarea):not([type="checkbox"], [type="radio"], [type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"], [type="range"])[aria-invalid] {
+		background-position: center right 0.75rem;
+		background-repeat: no-repeat;
+		background-size: 1rem auto;
+		padding-inline-end: calc(var(--t-pico-form-element-spacing-horizontal) + 1.5rem);
+		padding-inline-start: var(--t-pico-form-element-spacing-horizontal);
+	}
+
+	:where(input, textarea):not(
+		[type="checkbox"],
+		[type="radio"],
+		[type="date"],
+		[type="datetime-local"],
+		[type="month"],
+		[type="time"],
+		[type="week"],
+		[type="range"]
+	)[aria-invalid="false"] {
+		background-image: var(--t-pico-icon-valid);
+	}
+
+	:where(input, textarea):not(
+		[type="checkbox"],
+		[type="radio"],
+		[type="date"],
+		[type="datetime-local"],
+		[type="month"],
+		[type="time"],
+		[type="week"],
+		[type="range"]
+	)[aria-invalid="true"] {
+		background-image: var(--t-pico-icon-invalid);
+	}
+
+	:where(input, select, textarea)[aria-invalid="false"] {
+		--t-pico-border-color: var(--t-pico-form-element-valid-border-color);
+	}
+
+	:where(input, select, textarea)[aria-invalid="false"]:is(:active, :focus) {
+		--t-pico-border-color: var(--t-pico-form-element-valid-active-border-color);
+	}
+
+	:where(input, select, textarea)[aria-invalid="false"]:is(:active, :focus):not([type="checkbox"], [type="radio"]) {
+		--t-pico-box-shadow: 0 0 0 var(--t-pico-outline-width) var(--t-pico-form-element-valid-focus-color);
+	}
+
+	:where(input, select, textarea)[aria-invalid="true"] {
+		--t-pico-border-color: var(--t-pico-form-element-invalid-border-color);
+	}
+
+	:where(input, select, textarea)[aria-invalid="true"]:is(:active, :focus) {
+		--t-pico-border-color: var(--t-pico-form-element-invalid-active-border-color);
+	}
+
+	:where(input, select, textarea)[aria-invalid="true"]:is(:active, :focus):not([type="checkbox"], [type="radio"]) {
+		--t-pico-box-shadow: 0 0 0 var(--t-pico-outline-width) var(--t-pico-form-element-invalid-focus-color);
+	}
+
+	:where(input, select, textarea, fieldset) + small {
+		color: var(--t-pico-muted-color);
+		display: block;
+		margin-block: calc(var(--t-pico-spacing) * -0.75) var(--t-pico-spacing);
+		width: 100%;
+	}
+
+	:where(input, select, textarea, fieldset)[aria-invalid="false"] + small {
+		color: var(--t-pico-valid-color);
+	}
+
+	:where(input, select, textarea, fieldset)[aria-invalid="true"] + small {
+		color: var(--t-pico-invalid-color);
+	}
+
+	:where([dir="rtl"] input, [dir="rtl"] select, [dir="rtl"] textarea)[aria-invalid] {
+		background-position: center left 0.75rem;
+	}
+}

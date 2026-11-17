@@ -1,0 +1,18 @@
+@layer elements {
+	:where(hgroup) {
+		margin-block-end: var(--t-pico-typography-spacing-vertical);
+	}
+
+	:where(hgroup > *) {
+		margin-block: 0;
+	}
+
+	:where(hgroup) > :not(:first-child):last-child {
+		--t-pico-color: var(--t-pico-muted-color);
+		--t-pico-font-weight: unset;
+
+		color: var(--t-pico-color);
+		font-size: 1rem;
+		font-weight: var(--t-pico-font-weight);
+	}
+}

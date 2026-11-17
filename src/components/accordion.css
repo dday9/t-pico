@@ -1,0 +1,103 @@
+@layer components {
+	:where(details) {
+		--t-pico-accordion-active-summary-color: var(--t-pico-primary-hover);
+		--t-pico-accordion-close-summary-color: var(--t-pico-color);
+		--t-pico-accordion-open-summary-color: var(--t-pico-muted-color);
+
+		display: block;
+		margin-block-end: var(--t-pico-spacing);
+	}
+
+	:where(details summary) {
+		cursor: pointer;
+		line-height: 1rem;
+		list-style: none;
+		transition: color var(--t-pico-transition);
+	}
+
+	:where(details summary:not([role])) {
+		color: var(--t-pico-accordion-close-summary-color);
+	}
+
+	:where(details summary)::-webkit-details-marker {
+		display: none;
+	}
+
+	:where(details summary)::after {
+		background-image: var(--t-pico-icon-chevron);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 1rem auto;
+		content: "";
+		display: block;
+		float: inline-end;
+		height: 1rem;
+		margin-inline-start: calc(var(--t-pico-spacing) * 0.5);
+		transform: rotate(-90deg);
+		transition: transform var(--t-pico-transition);
+		width: 1rem;
+	}
+
+	:where(details summary:focus) {
+		outline: 0;
+	}
+
+	:where(details summary:not([role]):focus) {
+		color: var(--t-pico-accordion-active-summary-color);
+	}
+
+	:where(details summary:not([role]):focus-visible) {
+		color: var(--t-pico-primary);
+		outline: var(--t-pico-outline-width) solid var(--t-pico-primary-focus);
+		outline-offset: calc(var(--t-pico-spacing) * 0.5);
+	}
+
+	:where(details summary[role="button"]) {
+		line-height: var(--t-pico-line-height);
+		text-align: start;
+		width: 100%;
+	}
+
+	:where(details summary[role="button"])::after {
+		filter: brightness(0) invert(1);
+		height: calc(1rem * var(--t-pico-line-height));
+	}
+
+	:where(details[open] > summary) {
+		margin-block-end: var(--t-pico-spacing);
+	}
+
+	:where(details[open] > summary:not([role]):not(:focus)) {
+		color: var(--t-pico-accordion-open-summary-color);
+	}
+
+	:where(details[open] > summary)::after {
+		transform: rotate(0);
+	}
+	@media (prefers-reduced-motion: no-preference) {
+		:where(details) {
+			--t-pico-accordion-fade-duration: 0.15s;
+		}
+
+		:where(details > summary) {
+			transition:
+				color var(--t-pico-transition),
+				margin-block-end 0s var(--t-pico-accordion-fade-duration);
+		}
+
+		:where(details[open] > summary) {
+			transition: color var(--t-pico-transition);
+		}
+
+		:where(details)::details-content {
+			opacity: 0;
+			transition:
+				content-visibility var(--t-pico-accordion-fade-duration) allow-discrete,
+				opacity var(--t-pico-accordion-fade-duration) ease-in-out;
+		}
+
+		:where(details[open])::details-content {
+			opacity: 1;
+		}
+	}
+}

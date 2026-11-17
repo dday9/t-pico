@@ -1,0 +1,47 @@
+
+@layer components {
+	:where([aria-busy="true"]:not(input, select, textarea, html, form)) {
+		white-space: nowrap;
+	}
+
+	:where([aria-busy="true"]:not(input, select, textarea, html, form))::before {
+		border: 0.16em solid currentColor;
+		border-inline-end-color: transparent;
+		border-radius: 50%;
+		box-sizing: border-box;
+		color: var(--t-pico-muted-color);
+		content: "";
+		display: inline-block;
+		height: 1em;
+		vertical-align: -0.125em;
+		width: 1em;
+	}
+
+	:where([aria-busy="true"]:not(input, select, textarea, html, form):not(:empty))::before {
+		margin-inline-end: calc(var(--t-pico-spacing) * 0.5);
+	}
+
+	:where([aria-busy="true"]:not(input, select, textarea, html, form):empty) {
+		text-align: center;
+	}
+
+	:where(:is(button, [role="button"])[aria-busy="true"])::before {
+		color: inherit;
+	}
+
+	:where(:is(a, button, [role="button"])[aria-busy="true"]) {
+		pointer-events: none;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		:where([aria-busy="true"]:not(input, select, textarea, html, form))::before {
+			animation: t-pico-loading 0.75s linear infinite;
+		}
+	}
+
+	@keyframes t-pico-loading {
+		to {
+			transform: rotate(1turn);
+		}
+	}
+}

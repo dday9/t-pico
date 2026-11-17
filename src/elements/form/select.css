@@ -1,0 +1,23 @@
+@layer elements {
+	:where(select) {
+		text-transform: none;
+	}
+
+	:where(select:not([multiple], [size])) {
+		background-image: var(--t-pico-icon-chevron);
+		background-position: center right 0.75rem;
+		background-repeat: no-repeat;
+		background-size: 1rem auto;
+		padding-inline-end: calc(var(--t-pico-form-element-spacing-horizontal) + 1.5rem);
+		padding-inline-start: var(--t-pico-form-element-spacing-horizontal);
+	}
+
+	:where(select[multiple] option:checked) {
+		background: var(--t-pico-form-element-selected-background-color);
+		color: var(--t-pico-form-element-color);
+	}
+
+	:where([dir="rtl"] select:not([multiple], [size])) {
+		background-position: center left 0.75rem;
+	}
+}

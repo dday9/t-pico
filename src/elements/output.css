@@ -1,0 +1,7 @@
+@layer elements {
+	:where(output) {
+		--t-pico-font-family: var(--t-pico-font-family-monospace);
+
+		font-family: var(--t-pico-font-family);
+	}
+}

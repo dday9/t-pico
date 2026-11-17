@@ -1,0 +1,17 @@
+@layer elements {
+	:where(mark) {
+		--t-pico-mark-background-color: light-dark(
+			color-mix(in srgb, var(--t-pico-amber-100), var(--t-pico-amber-50)),
+			var(--t-pico-azure-750)
+		);
+		--t-pico-mark-color: light-dark(
+			var(--t-pico-zinc-950),
+			var(--t-pico-white)
+		);
+
+		background-color: var(--t-pico-mark-background-color);
+		color: var(--t-pico-mark-color);
+		padding: 0.125rem 0.25rem;
+		vertical-align: baseline;
+	}
+}

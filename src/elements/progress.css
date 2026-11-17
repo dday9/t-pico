@@ -1,0 +1,72 @@
+@layer elements {
+	:where(progress) {
+		--t-pico-progress-background-color: light-dark(
+			var(--t-pico-slate-100),
+			var(--t-pico-slate-850)
+		);
+		--t-pico-progress-color: var(--t-pico-primary-background);
+
+		accent-color: var(--t-pico-primary);
+		appearance: none;
+		background-color: var(--t-pico-progress-background-color);
+		border: 0;
+		border-radius: var(--t-pico-border-radius);
+		color: var(--t-pico-progress-color);
+		display: inline-block;
+		height: 0.5rem;
+		margin-block-end: calc(var(--t-pico-spacing) * 0.5);
+		overflow: hidden;
+		vertical-align: baseline;
+		width: 100%;
+	}
+
+	:where(progress)::-webkit-progress-bar {
+		background: none;
+		border-radius: var(--t-pico-border-radius);
+	}
+
+	:where(progress[value])::-webkit-progress-value {
+		background-color: var(--t-pico-progress-color);
+		transition: inline-size var(--t-pico-transition);
+	}
+
+	:where(progress)::-moz-progress-bar {
+		background-color: var(--t-pico-progress-color);
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		:where(progress:indeterminate) {
+			animation: t-pico-progress-indeterminate 1s linear infinite;
+			background:
+				var(--t-pico-progress-background-color)
+				linear-gradient(
+					to right,
+					var(--t-pico-progress-color) 30%,
+					var(--t-pico-progress-background-color) 30%
+				)
+				top left / 150% 150% no-repeat;
+		}
+
+		:where(progress:indeterminate)::-webkit-progress-value {
+			background-color: transparent;
+		}
+
+		:where(progress:indeterminate)::-moz-progress-bar {
+			background-color: transparent;
+		}
+
+		:where(progress:indeterminate:dir(rtl)) {
+			animation-direction: reverse;
+		}
+	}
+
+	@keyframes t-pico-progress-indeterminate {
+		0% {
+			background-position: 200% 0;
+		}
+
+		100% {
+			background-position: -200% 0;
+		}
+	}
+}

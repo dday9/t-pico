@@ -1,0 +1,43 @@
+@layer elements {
+	:where(nav) {
+		--t-pico-nav-breadcrumb-divider: ">";
+		--t-pico-nav-element-spacing-horizontal: calc(var(--t-pico-spacing) * 0.5);
+		--t-pico-nav-element-spacing-vertical: var(--t-pico-spacing);
+		--t-pico-nav-link-spacing-horizontal: calc(var(--t-pico-spacing) * 0.5);
+		--t-pico-nav-link-spacing-vertical: calc(var(--t-pico-spacing) * 0.5);
+
+		align-items: center;
+		column-gap: calc(var(--t-pico-spacing) * 0.5);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		min-inline-size: 0;
+		overflow: visible;
+		row-gap: calc(var(--t-pico-spacing) * 0.5);
+	}
+
+	:where(nav > :is(a, [role="link"])) {
+		border-radius: var(--t-pico-border-radius);
+		display: inline-block;
+		flex-shrink: 0;
+		padding: var(--t-pico-nav-link-spacing-vertical) var(--t-pico-nav-link-spacing-horizontal);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	:where(nav > :is(a, [role="link"]):hover) {
+		text-decoration: underline;
+	}
+
+	:where(aside nav) {
+		align-items: stretch;
+		flex-direction: column;
+		justify-content: flex-start;
+		row-gap: calc(var(--t-pico-spacing) * 0.25);
+	}
+
+	:where(aside nav > :is(a, [role="link"])) {
+		display: block;
+		white-space: normal;
+	}
+}

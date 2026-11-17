@@ -1,0 +1,7 @@
+@layer elements {
+	:where(del) {
+		--t-pico-del-color: var(--t-pico-invalid-color);
+
+		color: var(--t-pico-del-color);
+	}
+}

@@ -1,0 +1,46 @@
+
+@layer components {
+	:where(article) {
+		--t-pico-card-background-color: light-dark(
+			var(--t-pico-background-color),
+			var(--t-pico-slate-900)
+		);
+		--t-pico-card-border-color: light-dark(
+			var(--t-pico-muted-border-color),
+			var(--t-pico-slate-900)
+		);
+		--t-pico-card-box-shadow: var(--t-pico-box-shadow);
+		--t-pico-card-sectioning-background-color: light-dark(
+			color-mix(in srgb, var(--t-pico-white) 75%, var(--t-pico-slate-50)),
+			color-mix(in srgb, var(--t-pico-slate-900) 75%, var(--t-pico-slate-850))
+		);
+
+		background: var(--t-pico-card-background-color);
+		border-radius: var(--t-pico-border-radius);
+		box-shadow: var(--t-pico-card-box-shadow);
+		margin-block-end: var(--t-pico-block-spacing-vertical);
+		padding-block: var(--t-pico-block-spacing-vertical);
+		padding-inline: var(--t-pico-block-spacing-horizontal);
+	}
+
+	:where(article > header, article > footer) {
+		background-color: var(--t-pico-card-sectioning-background-color);
+		margin-inline: calc(var(--t-pico-block-spacing-horizontal) * -1);
+		padding-block: calc(var(--t-pico-block-spacing-vertical) * 0.66);
+		padding-inline: var(--t-pico-block-spacing-horizontal);
+	}
+
+	:where(article > header) {
+		border-block-end: var(--t-pico-border-width) solid var(--t-pico-card-border-color);
+		border-start-end-radius: var(--t-pico-border-radius);
+		border-start-start-radius: var(--t-pico-border-radius);
+		margin-block: calc(var(--t-pico-block-spacing-vertical) * -1) var(--t-pico-block-spacing-vertical);
+	}
+
+	:where(article > footer) {
+		border-block-start: var(--t-pico-border-width) solid var(--t-pico-card-border-color);
+		border-end-end-radius: var(--t-pico-border-radius);
+		border-end-start-radius: var(--t-pico-border-radius);
+		margin-block: var(--t-pico-block-spacing-vertical) calc(var(--t-pico-block-spacing-vertical) * -1);
+	}
+}

@@ -1,0 +1,11 @@
+@layer elements {
+	:where(input[type="color"])::-webkit-color-swatch {
+		border: 0;
+		border-radius: calc(var(--t-pico-border-radius) * 0.5);
+	}
+
+	:where(input[type="color"])::-moz-color-swatch {
+		border: 0;
+		border-radius: calc(var(--t-pico-border-radius) * 0.5);
+	}
+}

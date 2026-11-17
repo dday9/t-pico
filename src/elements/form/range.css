@@ -1,0 +1,88 @@
+@layer elements {
+	:where(input[type="range"]) {
+		--t-pico-range-active-border-color: light-dark(
+			var(--t-pico-slate-200),
+			var(--t-pico-slate-850)
+		);
+		--t-pico-range-border-color: light-dark(
+			var(--t-pico-slate-100),
+			var(--t-pico-slate-900)
+		);
+		--t-pico-range-thumb-active-color: var(--t-pico-primary-background);
+		--t-pico-range-thumb-border-color: light-dark(
+			var(--t-pico-white),
+			color-mix(in srgb, var(--t-pico-slate-950), var(--t-pico-slate-900))
+		);
+		--t-pico-range-thumb-color: var(--t-pico-secondary-background);
+
+		appearance: none;
+		background: none;
+		border: 0;
+		box-shadow: none;
+		height: 1.25rem;
+		outline: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	:where(input[type="range"])::-webkit-slider-runnable-track {
+		background-color: var(--t-pico-range-border-color);
+		border-radius: var(--t-pico-border-radius);
+		height: 0.375rem;
+		transition:
+			background-color var(--t-pico-transition),
+			box-shadow var(--t-pico-transition);
+		width: 100%;
+	}
+
+	:where(input[type="range"])::-moz-range-track {
+		background-color: var(--t-pico-range-border-color);
+		border-radius: var(--t-pico-border-radius);
+		height: 0.375rem;
+		transition:
+			background-color var(--t-pico-transition),
+			box-shadow var(--t-pico-transition);
+		width: 100%;
+	}
+
+	:where(input[type="range"])::-webkit-slider-thumb {
+		appearance: none;
+		background-color: var(--t-pico-range-thumb-color);
+		border: 2px solid var(--t-pico-range-thumb-border-color);
+		border-radius: 50%;
+		cursor: pointer;
+		height: 1.25rem;
+		margin-block-start: -0.4375rem;
+		transition:
+			background-color var(--t-pico-transition),
+			transform var(--t-pico-transition);
+		width: 1.25rem;
+	}
+
+	:where(input[type="range"])::-moz-range-thumb {
+		appearance: none;
+		background-color: var(--t-pico-range-thumb-color);
+		border: 2px solid var(--t-pico-range-thumb-border-color);
+		border-radius: 50%;
+		cursor: pointer;
+		height: 1.25rem;
+		margin-block-start: -0.4375rem;
+		transition:
+			background-color var(--t-pico-transition),
+			transform var(--t-pico-transition);
+		width: 1.25rem;
+	}
+
+	:where(input[type="range"]:is(:active, :focus-within)) {
+		--t-pico-range-border-color: var(--t-pico-range-active-border-color);
+		--t-pico-range-thumb-color: var(--t-pico-range-thumb-active-color);
+	}
+
+	:where(input[type="range"]:active)::-webkit-slider-thumb {
+		transform: scale(1.25);
+	}
+
+	:where(input[type="range"]:active)::-moz-range-thumb {
+		transform: scale(1.25);
+	}
+}

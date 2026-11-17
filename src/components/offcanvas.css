@@ -1,0 +1,63 @@
+@layer components {
+	:where(dialog:has(> aside)) {
+		block-size: 100dvh;
+		inline-size: min(100dvw, max(400px, 33vw));
+		inset-block: 0;
+		inset-inline-end: auto;
+		inset-inline-start: 0;
+		margin: 0;
+		max-block-size: none;
+		max-inline-size: none;
+	}
+
+	:where(dialog > aside) {
+		block-size: 100%;
+		inline-size: 100%;
+		margin: 0;
+		min-block-size: 0;
+	}
+
+	:where(dialog > aside > article) {
+		block-size: 100%;
+		border-radius: 0;
+		display: flex;
+		flex-direction: column;
+		inline-size: 100%;
+		margin: 0;
+		max-block-size: none;
+		overflow: auto;
+	}
+
+	:where(dialog > aside > article > footer) {
+		flex-shrink: 0;
+		margin-block-start: auto;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		:where(dialog:has(> aside)) {
+			transform: translateX(-100%);
+		}
+
+		:where(dialog:has(> aside)[open]) {
+			transform: none;
+		}
+
+		:where(dialog:has(> aside):dir(rtl)) {
+			transform: translateX(100%);
+		}
+
+		:where(dialog:has(> aside)[open]:dir(rtl)) {
+			transform: none;
+		}
+
+		@starting-style {
+			:where(dialog:has(> aside)[open]) {
+				transform: translateX(-100%);
+			}
+
+			:where(dialog:has(> aside)[open]:dir(rtl)) {
+				transform: translateX(100%);
+			}
+		}
+	}
+}

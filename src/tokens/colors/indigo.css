@@ -1,0 +1,24 @@
+@layer tokens {
+    :root, :host {
+        --t-pico-indigo-950: oklch(18.65% 0.0719 284.2);
+        --t-pico-indigo-900: oklch(23.48% 0.0886 279.8);
+        --t-pico-indigo-850: oklch(28.20% 0.1106 277.3);
+        --t-pico-indigo-800: oklch(32.82% 0.1355 276.4);
+        --t-pico-indigo-750: oklch(37.47% 0.1581 275.6);
+        --t-pico-indigo-700: oklch(41.96% 0.1783 275.5);
+        --t-pico-indigo-650: oklch(45.65% 0.1929 275.6);
+        --t-pico-indigo-600: oklch(50.84% 0.1969 278.1);
+        --t-pico-indigo-550: oklch(54.95% 0.1811 282.0);
+        --t-pico-indigo-500: oklch(58.78% 0.1668 284.9);
+        --t-pico-indigo-450: oklch(62.81% 0.1497 287.6);
+        --t-pico-indigo-400: oklch(67.04% 0.1325 289.4);
+        --t-pico-indigo-350: oklch(71.03% 0.1170 291.0);
+        --t-pico-indigo-300: oklch(75.18% 0.0987 292.5);
+        --t-pico-indigo-250: oklch(79.28% 0.0821 293.1);
+        --t-pico-indigo-200: oklch(83.30% 0.0630 294.2);
+        --t-pico-indigo-150: oklch(87.43% 0.0458 296.5);
+        --t-pico-indigo-100: oklch(91.66% 0.0274 297.3);
+        --t-pico-indigo-50: oklch(95.93% 0.0121 296.4);
+        --t-pico-indigo: var(--t-pico-indigo-600);
+    }
+}

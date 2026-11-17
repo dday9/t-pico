@@ -1,0 +1,5 @@
+@layer elements {
+	:where(small) {
+		--t-pico-font-size: 1em;
+	}
+}

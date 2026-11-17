@@ -1,0 +1,40 @@
+@layer elements {
+	:where(input[type="search"]) {
+		--t-pico-border-radius: 5rem;
+
+		background-image: var(--t-pico-icon-search);
+		background-position: center left calc(var(--t-pico-form-element-spacing-horizontal) + 0.125rem);
+		background-repeat: no-repeat;
+		background-size: 1rem auto;
+		padding-inline-start: calc(var(--t-pico-form-element-spacing-horizontal) + 1.75rem);
+	}
+
+	:where(input[type="search"][aria-invalid]) {
+		background-position:
+			center left 1.125rem,
+			center right 0.75rem;
+		padding-inline-start: calc(var(--t-pico-form-element-spacing-horizontal) + 1.75rem);
+	}
+
+	:where(input[type="search"][aria-invalid="false"]) {
+		background-image:
+			var(--t-pico-icon-search),
+			var(--t-pico-icon-valid);
+	}
+
+	:where(input[type="search"][aria-invalid="true"]) {
+		background-image:
+			var(--t-pico-icon-search),
+			var(--t-pico-icon-invalid);
+	}
+
+	:where(input[type="search"]:dir(rtl)) {
+		background-position: center right calc(var(--t-pico-form-element-spacing-horizontal) + 0.125rem);
+	}
+
+	:where(input[type="search"][aria-invalid]:dir(rtl)) {
+		background-position:
+			center right 1.125rem,
+			center left 0.75rem;
+	}
+}

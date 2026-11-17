@@ -1,0 +1,11 @@
+@layer reset {
+	:where(*, *::before, *::after) {
+		background-repeat: no-repeat;
+		box-sizing: border-box;
+	}
+
+	:where(*::before, *::after) {
+		text-decoration: inherit;
+		vertical-align: inherit;
+	}
+}

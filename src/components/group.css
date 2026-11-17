@@ -1,0 +1,118 @@
+
+@layer components {
+	:where([role="group"], [role="search"]) {
+		border-radius: var(--t-pico-border-radius);
+		box-shadow: var(--t-pico-group-box-shadow, 0 0 0 transparent);
+		display: inline-flex;
+		margin-block-end: var(--t-pico-spacing);
+		position: relative;
+		transition: box-shadow var(--t-pico-transition);
+		vertical-align: middle;
+		width: 100%;
+	}
+
+	:where(:is([role="group"], [role="search"]) > *) {
+		flex: 1 1 auto;
+		margin-block-end: 0;
+		position: relative;
+	}
+
+	:where(:is([role="group"], [role="search"]) > :not(:first-child)) {
+		border-end-start-radius: 0;
+		border-start-start-radius: 0;
+	}
+
+	:where(:is([role="group"], [role="search"]) > :not(:last-child)) {
+		border-end-end-radius: 0;
+		border-start-end-radius: 0;
+	}
+
+	:where(
+		:is([role="group"], [role="search"]) >
+		:is(button, input:not([type="checkbox"], [type="radio"]), select, [role="button"]):not(:first-child)
+	) {
+		margin-inline-start: calc(var(--t-pico-border-width) * -1);
+	}
+
+	:where(
+		:is([role="group"], [role="search"])
+		:is(button, input[type="button"], input[type="submit"], [role="button"])
+	) {
+		--t-pico-form-element-spacing-horizontal: 2rem;
+
+		width: auto;
+	}
+
+	:where(
+		:is([role="group"], [role="search"])
+		input[type="reset"]
+	) {
+		width: auto;
+	}
+
+	:where(
+		:is([role="group"], [role="search"]) >
+		:focus
+	) {
+		z-index: 2;
+	}
+
+	:where(
+		:is([role="group"], [role="search"]):has(
+			:is(button, input[type="button"], input[type="reset"], input[type="submit"], [role="button"]):focus
+		)
+	) {
+		--t-pico-group-box-shadow: var(
+			--t-pico-group-box-shadow-focus-with-button,
+			0 0 0 var(--t-pico-outline-width) var(--t-pico-primary-focus)
+		);
+	}
+
+	:where(
+		:is([role="group"], [role="search"]):has(
+			:is(button, input[type="button"], input[type="reset"], input[type="submit"], [role="button"]):focus
+		)
+	) :where(input:not([type="checkbox"], [type="radio"]), select) {
+		border-color: transparent;
+	}
+
+	:where(
+		:is([role="group"], [role="search"]):has(
+			:is(input:not([type="button"], [type="reset"], [type="submit"], [type="checkbox"], [type="radio"]), select):focus
+		)
+	) {
+		--t-pico-group-box-shadow: var(
+			--t-pico-group-box-shadow-focus-with-input,
+			0 0 0 var(--t-pico-border-width) light-dark(
+				var(--t-pico-slate-150),
+				var(--t-pico-slate-800)
+			)
+		);
+	}
+
+	:where(
+		:is([role="group"], [role="search"]):has(
+			:is(input:not([type="button"], [type="reset"], [type="submit"], [type="checkbox"], [type="radio"]), select):focus
+		)
+	) :where(button, input[type="button"], input[type="submit"], [role="button"]) {
+		--t-pico-button-box-shadow: 0 0 0 var(--t-pico-border-width) var(--t-pico-primary-border);
+		--t-pico-button-hover-box-shadow: 0 0 0 var(--t-pico-border-width) var(--t-pico-primary-hover-border);
+	}
+
+	:where(
+		:is([role="group"], [role="search"])
+		:is(button, input[type="button"], input[type="reset"], input[type="submit"], [role="button"]):focus
+	) {
+		box-shadow: none;
+	}
+
+	:where([role="search"] > :first-child) {
+		border-end-start-radius: 5rem;
+		border-start-start-radius: 5rem;
+	}
+
+	:where([role="search"] > :last-child) {
+		border-end-end-radius: 5rem;
+		border-start-end-radius: 5rem;
+	}
+}

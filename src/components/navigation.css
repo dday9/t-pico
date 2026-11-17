@@ -1,0 +1,150 @@
+@layer components {
+	:where(nav:has(> :is(ul, ol):not([popover]))) {
+		justify-content: space-between;
+	}
+
+	:where(nav > :is(ul, ol):not([popover])) {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	:where(nav > :is(ul, ol):not([popover]):first-of-type) {
+		margin-inline-start: calc(var(--t-pico-nav-element-spacing-horizontal) * -1);
+	}
+
+	:where(nav > :is(ul, ol):not([popover]):last-of-type) {
+		margin-inline-end: calc(var(--t-pico-nav-element-spacing-horizontal) * -1);
+	}
+
+	:where(nav > :is(ul, ol):not([popover]) > li) {
+		display: inline-block;
+		list-style: none;
+		margin: 0;
+		padding: var(--t-pico-nav-element-spacing-vertical) var(--t-pico-nav-element-spacing-horizontal);
+	}
+
+	:where(nav > :is(ul, ol):not([popover]) > li > :is(a, [role="link"])) {
+		border-radius: var(--t-pico-border-radius);
+		display: inline-block;
+		margin-block: calc(var(--t-pico-nav-link-spacing-vertical) * -1);
+		margin-inline: calc(var(--t-pico-nav-link-spacing-horizontal) * -1);
+		padding: var(--t-pico-nav-link-spacing-vertical) var(--t-pico-nav-link-spacing-horizontal);
+	}
+
+	:where(nav > :is(ul, ol):not([popover]) > li > :is(a, [role="link"]):not(:hover)) {
+		text-decoration: none;
+	}
+
+	:where(nav > :is(ul, ol):not([popover]) > li > :is(button, [role="button"], input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]), select)) {
+		height: auto;
+		margin: 0;
+		padding: calc(var(--t-pico-nav-link-spacing-vertical) - var(--t-pico-border-width) * 2) var(--t-pico-nav-link-spacing-horizontal);
+		width: auto;
+	}
+
+	/* Current navigation item */
+	:where(
+		nav :is(a, [role="link"])[aria-current]:not([aria-current=""], [aria-current="false" i]),
+		nav li[aria-current]:not([aria-current=""], [aria-current="false" i]),
+		nav li[aria-current]:not([aria-current=""], [aria-current="false" i]) > :is(a, [role="link"])
+	) {
+		color: var(--t-pico-primary);
+		text-decoration: none;
+	}
+
+	:where(
+		nav > :is(a, [role="link"]):hover,
+		nav :is(ul, ol):not([popover]) > li > :is(a, [role="link"]):hover
+	) {
+		text-decoration: underline;
+	}
+
+	/* Vertical navigation */
+	:where(aside nav > ul:not([popover])) {
+		align-items: stretch;
+		flex-direction: column;
+		margin-inline: 0;
+		width: 100%;
+	}
+
+	:where(aside nav > ul:not([popover]) > li) {
+		display: block;
+		padding-block: calc(var(--t-pico-nav-element-spacing-vertical) * 0.5);
+	}
+
+	:where(aside nav > ul:not([popover]) > li > :is(a, [role="link"])) {
+		display: block;
+	}
+
+	/* Nested sidebar navigation */
+	:where(aside nav ul:not([popover]) li > details) {
+		margin-block: 0;
+		padding-block: 0;
+	}
+
+	:where(aside nav ul:not([popover]) li > details > summary) {
+		color: var(--t-pico-primary);
+		cursor: pointer;
+	}
+
+	:where(aside nav ul:not([popover]) li > details > ul) {
+		border-inline-start: var(--t-pico-border-width) solid var(--t-pico-muted-border-color);
+		list-style: none;
+		margin-block: calc(var(--t-pico-spacing) * 0.5) 0;
+		margin-inline: calc(var(--t-pico-spacing) * 0.5) 0;
+		padding-inline-start: var(--t-pico-spacing);
+	}
+
+	:where(aside nav ul:not([popover]) li > details > ul > li) {
+		list-style: none;
+		margin-block: calc(var(--t-pico-spacing) * 0.5);
+		padding: 0;
+	}
+
+	/* Breadcrumbs */
+	:where(nav:has(> ol), nav[aria-label="breadcrumb" i]) {
+		justify-content: flex-start;
+	}
+
+	:where(nav > ol, nav[aria-label="breadcrumb" i] > ul:not([popover])) {
+		flex-wrap: nowrap;
+		margin-inline: 0;
+		overflow-x: auto;
+	}
+
+	:where(nav > ol > li, nav[aria-label="breadcrumb" i] > ul:not([popover]) > li) {
+		flex-shrink: 0;
+		white-space: nowrap;
+	}
+
+	:where(nav > ol > li + li, nav[aria-label="breadcrumb" i] > ul:not([popover]) > li + li)::before {
+		color: var(--t-pico-muted-color);
+		content: var(--t-pico-nav-breadcrumb-divider);
+		display: inline-block;
+		margin-inline-end: var(--t-pico-nav-link-spacing-horizontal);
+	}
+
+	:where(
+		nav > ol [aria-current]:not([aria-current=""], [aria-current="false" i]),
+		nav[aria-label="breadcrumb" i] > ul:not([popover]) [aria-current]:not([aria-current=""], [aria-current="false" i])
+	) {
+		color: var(--t-pico-muted-color);
+		font-weight: inherit;
+		pointer-events: none;
+		text-decoration: none;
+	}
+
+	:where(nav:dir(rtl)) {
+		--t-pico-nav-breadcrumb-divider: "<";
+	}
+
+	@media (forced-colors: active) {
+		:where(aside nav ul:not([popover]) li > details > ul) {
+			border-color: CanvasText;
+		}
+	}
+}

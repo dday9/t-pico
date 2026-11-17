@@ -1,0 +1,24 @@
+@layer tokens {
+    :root, :host {
+        --t-pico-pumpkin-950: oklch(17.70% 0.0270 73.8);
+        --t-pico-pumpkin-900: oklch(22.40% 0.0395 70.9);
+        --t-pico-pumpkin-850: oklch(26.77% 0.0538 67.3);
+        --t-pico-pumpkin-800: oklch(31.16% 0.0683 64.3);
+        --t-pico-pumpkin-750: oklch(35.63% 0.0810 63.3);
+        --t-pico-pumpkin-700: oklch(39.83% 0.0913 62.5);
+        --t-pico-pumpkin-650: oklch(44.27% 0.1017 62.2);
+        --t-pico-pumpkin-600: oklch(48.78% 0.1114 62.8);
+        --t-pico-pumpkin-550: oklch(53.01% 0.1214 62.6);
+        --t-pico-pumpkin-500: oklch(57.34% 0.1307 63.1);
+        --t-pico-pumpkin-450: oklch(61.54% 0.1411 62.4);
+        --t-pico-pumpkin-400: oklch(66.15% 0.1511 62.7);
+        --t-pico-pumpkin-350: oklch(70.38% 0.1609 62.8);
+        --t-pico-pumpkin-300: oklch(76.52% 0.1752 62.6);
+        --t-pico-pumpkin-250: oklch(78.95% 0.1572 64.2);
+        --t-pico-pumpkin-200: oklch(82.97% 0.1206 64.0);
+        --t-pico-pumpkin-150: oklch(87.19% 0.0835 64.6);
+        --t-pico-pumpkin-100: oklch(91.42% 0.0505 62.3);
+        --t-pico-pumpkin-50: oklch(95.72% 0.0211 60.7);
+        --t-pico-pumpkin: var(--t-pico-pumpkin-300);
+    }
+}

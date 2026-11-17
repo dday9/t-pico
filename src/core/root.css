@@ -1,0 +1,74 @@
+@layer core {
+	:where(:root, :host) {
+		/* Borders */
+		--t-pico-border-radius: 0.25rem;
+		--t-pico-border-width: 0.0625rem;
+
+		/* Fonts */
+		--t-pico-font-family: var(--t-pico-font-family-sans-serif);
+		--t-pico-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+		--t-pico-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--t-pico-font-family-emoji);
+		--t-pico-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--t-pico-font-family-emoji);
+		--t-pico-font-size: 100%;
+		--t-pico-font-weight: 400;
+		--t-pico-line-height: 1.5;
+
+		/* Outlines */
+		--t-pico-outline-width: 0.125rem;
+
+		/* Spacing */
+		--t-pico-block-spacing-horizontal: var(--t-pico-spacing);
+		--t-pico-block-spacing-vertical: var(--t-pico-spacing);
+		--t-pico-spacing: 1rem;
+		--t-pico-typography-spacing-vertical: 1rem;
+
+		/* Text */
+		--t-pico-text-underline-offset: 0.1rem;
+
+		/* Transitions */
+		--t-pico-transition: 0.2s ease-in-out;
+
+		/* Document */
+		background-color: var(--t-pico-background-color);
+		color: var(--t-pico-color);
+		font-family: var(--t-pico-font-family);
+		font-size: var(--t-pico-font-size);
+		font-weight: var(--t-pico-font-weight);
+		line-height: var(--t-pico-line-height);
+		overflow-wrap: break-word;
+		tab-size: 4;
+		text-rendering: optimizeLegibility;
+		text-underline-offset: var(--t-pico-text-underline-offset);
+		text-size-adjust: 100%;
+	}
+
+	@media (min-width: 576px) {
+		:where(:root, :host) {
+			--t-pico-font-size: 106.25%;
+		}
+	}
+
+	@media (min-width: 768px) {
+		:where(:root, :host) {
+			--t-pico-font-size: 112.5%;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		:where(:root, :host) {
+			--t-pico-font-size: 118.75%;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		:where(:root, :host) {
+			--t-pico-font-size: 125%;
+		}
+	}
+
+	@media (min-width: 1536px) {
+		:where(:root, :host) {
+			--t-pico-font-size: 131.25%;
+		}
+	}
+}

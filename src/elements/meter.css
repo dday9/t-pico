@@ -1,0 +1,67 @@
+@layer elements {
+	:where(meter) {
+		--t-pico-meter-background-color: light-dark(
+			var(--t-pico-slate-100),
+			var(--t-pico-slate-900)
+		);
+		--t-pico-meter-even-less-good-color: light-dark(
+			var(--t-pico-red-500),
+			var(--t-pico-red-400)
+		);
+		--t-pico-meter-optimum-color: light-dark(
+			var(--t-pico-jade-450),
+			var(--t-pico-jade-350)
+		);
+		--t-pico-meter-suboptimum-color: light-dark(
+			var(--t-pico-amber-500),
+			var(--t-pico-amber-400)
+		);
+
+		appearance: none;
+		background-color: var(--t-pico-meter-background-color);
+		border: 0;
+		border-radius: var(--t-pico-border-radius);
+		display: inline-block;
+		height: 0.5rem;
+		margin-block-end: calc(var(--t-pico-spacing) * 0.5);
+		overflow: hidden;
+		vertical-align: baseline;
+		width: 100%;
+	}
+
+	:where(meter)::-webkit-meter-bar {
+		background: var(--t-pico-meter-background-color);
+		border: 0;
+		border-radius: var(--t-pico-border-radius);
+		box-shadow: none;
+		grid-row: 1 / -1;
+	}
+
+	:where(meter)::-webkit-meter-optimum-value {
+		background: var(--t-pico-meter-optimum-color);
+		border-radius: var(--t-pico-border-radius);
+	}
+
+	:where(meter)::-webkit-meter-suboptimum-value {
+		background: var(--t-pico-meter-suboptimum-color);
+		border-radius: var(--t-pico-border-radius);
+	}
+
+	:where(meter)::-webkit-meter-even-less-good-value {
+		background: var(--t-pico-meter-even-less-good-color);
+		border-radius: var(--t-pico-border-radius);
+	}
+
+	:where(meter)::-moz-meter-bar {
+		background: var(--t-pico-meter-optimum-color);
+		border-radius: var(--t-pico-border-radius);
+	}
+
+	:where(meter:-moz-meter-sub-optimum)::-moz-meter-bar {
+		background: var(--t-pico-meter-suboptimum-color);
+	}
+
+	:where(meter:-moz-meter-sub-sub-optimum)::-moz-meter-bar {
+		background: var(--t-pico-meter-even-less-good-color);
+	}
+}

@@ -1,0 +1,70 @@
+@layer components {
+	:where(input[type="checkbox"][role="switch"]) {
+		--t-pico-border-width: 0.1875rem;
+		--t-pico-switch-background-color: light-dark(
+			var(--t-pico-slate-250),
+			var(--t-pico-slate-850)
+		);
+		--t-pico-switch-checked-background-color: var(--t-pico-primary-background);
+		--t-pico-switch-color: var(--t-pico-white);
+		--t-pico-switch-thumb-box-shadow: 0 0 0 transparent;
+		--t-pico-background-color: var(--t-pico-switch-background-color);
+		--t-pico-color: var(--t-pico-switch-color);
+
+		background-color: var(--t-pico-background-color);
+		border: var(--t-pico-border-width) solid var(--t-pico-border-color);
+		border-radius: 1.25em;
+		height: 1.25em;
+		line-height: 1.25em;
+		width: 2.25em;
+	}
+
+	:where(input[type="checkbox"][role="switch"]:not([aria-invalid])) {
+		--t-pico-border-color: var(--t-pico-switch-background-color);
+	}
+
+	:where(input[type="checkbox"][role="switch"])::before {
+		aspect-ratio: 1;
+		background-color: var(--t-pico-color);
+		border-radius: 50%;
+		box-shadow: var(--t-pico-switch-thumb-box-shadow);
+		content: "";
+		display: block;
+		height: 100%;
+		transition: margin 0.1s ease-in-out;
+	}
+
+	:where(input[type="checkbox"][role="switch"]:checked)::before {
+		margin-inline-start: calc(2.25em - 1.25em);
+	}
+
+	:where(input[type="checkbox"][role="switch"]:focus:not(:checked, [aria-invalid])) {
+		--t-pico-background-color: var(--t-pico-switch-background-color);
+		--t-pico-border-color: var(--t-pico-switch-background-color);
+	}
+
+	:where(input[type="checkbox"][role="switch"]:checked) {
+		--t-pico-background-color: var(--t-pico-switch-checked-background-color);
+		--t-pico-border-color: var(--t-pico-switch-checked-background-color);
+
+		background-image: none;
+	}
+
+	:where(input[type="checkbox"][role="switch"]:checked::before) {
+		margin-inline-start: calc(2.25em - 1.25em);
+	}
+
+	:where(input[type="checkbox"][role="switch"]:disabled) {
+		--t-pico-background-color: var(--t-pico-border-color);
+	}
+
+	:where(input[type="checkbox"][role="switch"][aria-invalid="false"]:checked) {
+		--t-pico-background-color: var(--t-pico-form-element-valid-border-color);
+		--t-pico-border-color: var(--t-pico-form-element-valid-border-color);
+	}
+
+	:where(input[type="checkbox"][role="switch"][aria-invalid="true"]:checked) {
+		--t-pico-background-color: var(--t-pico-form-element-invalid-border-color);
+		--t-pico-border-color: var(--t-pico-form-element-invalid-border-color);
+	}
+}

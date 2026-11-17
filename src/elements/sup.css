@@ -1,0 +1,9 @@
+@layer elements {
+	:where(sup) {
+		font-size: 0.75em;
+		line-height: 0;
+		position: relative;
+		top: -0.5em;
+		vertical-align: baseline;
+	}
+}

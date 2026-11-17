@@ -1,0 +1,32 @@
+@layer elements {
+	:where(audio, canvas, iframe, img, svg, video) {
+		vertical-align: middle;
+	}
+
+	:where(audio, canvas, video) {
+		display: inline-block;
+	}
+
+	:where(audio:not([controls])) {
+		display: none;
+		height: 0;
+	}
+
+	:where(iframe) {
+		border-style: none;
+	}
+
+	:where(img) {
+		border-style: none;
+		height: auto;
+		max-width: 100%;
+	}
+
+	:where(svg:not([fill])) {
+		fill: currentColor;
+	}
+
+	:where(svg:not(:host), svg:not(:root)) {
+		overflow: hidden;
+	}
+}

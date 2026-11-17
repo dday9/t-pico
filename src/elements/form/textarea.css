@@ -1,0 +1,18 @@
+@layer elements {
+	:where(textarea) {
+		display: block;
+		overflow: auto;
+		resize: vertical;
+	}
+
+	:where(textarea[aria-invalid]) {
+		--t-pico-icon-height: calc(
+			1rem * var(--t-pico-line-height) +
+			var(--t-pico-form-element-spacing-vertical) * 2 +
+			var(--t-pico-border-width) * 2
+		);
+
+		background-position: top right 0.75rem !important;
+		background-size: 1rem var(--t-pico-icon-height) !important;
+	}
+}

@@ -1,0 +1,58 @@
+@layer elements {
+	:where(code, kbd, pre, samp, var) {
+		--t-pico-code-background-color: light-dark(
+			color-mix(in srgb, var(--t-pico-slate-50) 75%, var(--t-pico-white)),
+			color-mix(in srgb, var(--t-pico-slate-900) 75%, var(--t-pico-slate-850))
+		);
+		--t-pico-code-color: light-dark(
+			var(--t-pico-zinc-550),
+			var(--t-pico-zinc-400)
+		);
+
+		--t-pico-font-family: var(--t-pico-font-family-monospace);
+
+		background: var(--t-pico-code-background-color);
+		border-radius: var(--t-pico-border-radius);
+		color: var(--t-pico-code-color);
+		font-family: var(--t-pico-font-family);
+		font-size: 0.875em;
+		font-weight: var(--t-pico-font-weight);
+		line-height: initial;
+	}
+
+	:where(code, kbd, samp, var) {
+		display: inline-block;
+		padding: 0.375rem;
+	}
+
+	:where(kbd) {
+		--t-pico-code-kbd-background-color: var(--t-pico-color);
+		--t-pico-code-kbd-color: var(--t-pico-background-color);
+
+		background-color: var(--t-pico-code-kbd-background-color);
+		color: var(--t-pico-code-kbd-color);
+		vertical-align: baseline;
+	}
+
+	:where(pre) {
+		display: block;
+		margin-block-end: var(--t-pico-spacing);
+		overflow: auto;
+	}
+
+	:where(pre code, pre samp) {
+		font-family: inherit;
+		font-size: inherit;
+	}
+
+	:where(pre > code, pre > samp) {
+		background: none;
+		display: block;
+		line-height: var(--t-pico-line-height);
+		padding: var(--t-pico-spacing);
+	}
+
+	:where(var) {
+		font-style: italic;
+	}
+}

@@ -1,0 +1,5 @@
+@layer elements {
+	:where(b, strong) {
+		font-weight: bolder;
+	}
+}

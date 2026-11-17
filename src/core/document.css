@@ -1,0 +1,47 @@
+@layer core {
+	:where(body) {
+		margin: 0;
+		width: 100%;
+	}
+
+	:where(main) {
+		display: block;
+	}
+
+	:where(body > header, body > main, body > footer) {
+		margin-inline: auto;
+		padding: var(--t-pico-block-spacing-vertical) var(--t-pico-block-spacing-horizontal);
+		width: 100%;
+	}
+
+	@media (min-width: 576px) {
+		:where(body > header, body > main, body > footer) {
+			max-width: 510px;
+			padding-inline: 0;
+		}
+	}
+
+	@media (min-width: 768px) {
+		:where(body > header, body > main, body > footer) {
+			max-width: 700px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		:where(body > header, body > main, body > footer) {
+			max-width: 950px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		:where(body > header, body > main, body > footer) {
+			max-width: 1200px;
+		}
+	}
+
+	@media (min-width: 1536px) {
+		:where(body > header, body > main, body > footer) {
+			max-width: 1450px;
+		}
+	}
+}

@@ -1,0 +1,111 @@
+
+@layer components {
+	:where(button[popovertarget]:has(+ ul[popover])) {
+		--t-pico-dropdown-trigger-background-color: light-dark(
+			color-mix(in srgb, var(--t-pico-slate-50) 25%, var(--t-pico-white)),
+			color-mix(in srgb, var(--t-pico-slate-850), var(--t-pico-slate-900))
+		);
+		--t-pico-dropdown-trigger-border-color: light-dark(
+			var(--t-pico-slate-150),
+			var(--t-pico-slate-800)
+		);
+		--t-pico-dropdown-trigger-color: var(--t-pico-muted-color);
+
+		align-items: center;
+		background-color: var(--t-pico-dropdown-trigger-background-color);
+		border-color: var(--t-pico-dropdown-trigger-border-color);
+		color: var(--t-pico-dropdown-trigger-color);
+		display: flex;
+		gap: var(--t-pico-spacing);
+		justify-content: space-between;
+		text-align: start;
+		width: 100%;
+	}
+
+	:where(button[popovertarget]:has(+ ul[popover]):is(:hover, :focus-visible)) {
+		border-color: var(--t-pico-primary-border);
+	}
+
+	:where(button[popovertarget]:has(+ ul[popover]))::after {
+		background-image: var(--t-pico-icon-chevron);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 1rem auto;
+		content: "";
+		flex: none;
+		height: 1rem;
+		transform: rotate(-90deg);
+		transition: transform var(--t-pico-transition);
+		width: 1rem;
+	}
+
+	:where(button[popovertarget]:has(+ ul[popover]:popover-open))::after {
+		transform: rotate(0);
+	}
+
+	:where(ul[popover]) {
+		--t-pico-dropdown-background-color: light-dark(
+			var(--t-pico-white),
+			var(--t-pico-slate-900)
+		);
+		--t-pico-dropdown-hover-background-color: light-dark(
+			var(--t-pico-slate-50),
+			var(--t-pico-slate-850)
+		);
+
+		background-color: var(--t-pico-dropdown-background-color);
+		border: var(--t-pico-border-width) solid var(--t-pico-muted-border-color);
+		border-radius: var(--t-pico-border-radius);
+		box-shadow: var(--t-pico-box-shadow);
+		color: var(--t-pico-color);
+		inline-size: max-content;
+		max-inline-size: calc(100dvw - var(--t-pico-spacing) * 2);
+		min-inline-size: anchor-size(width);
+		inset: auto;
+		list-style: none;
+		margin: 0;
+		margin-block: calc(var(--t-pico-spacing) * 0.375);
+		max-block-size: calc(100dvh - var(--t-pico-spacing) * 2);
+		max-inline-size: calc(100dvw - var(--t-pico-spacing) * 2);
+		overflow: auto;
+		padding: calc(var(--t-pico-spacing) * 0.5);
+		position: fixed;
+		position-area: block-end span-inline-end;
+		position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+	}
+
+	:where(ul[popover] > li) {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	:where(ul[popover] > li > :is(a, button)) {
+		background-color: transparent;
+		border: 0;
+		border-radius: var(--t-pico-border-radius);
+		box-shadow: none;
+		color: inherit;
+		cursor: pointer;
+		display: block;
+		font: inherit;
+		margin: 0;
+		padding: calc(var(--t-pico-spacing) * 0.5) calc(var(--t-pico-spacing) * 0.75);
+		text-align: start;
+		text-decoration: none;
+		width: 100%;
+	}
+
+	:where(ul[popover] > li > a:is(:hover, :focus-visible)) {
+		color: var(--t-pico-color);
+	}
+
+	:where(ul[popover] > li > :is(a, button):is(:hover, :focus-visible)) {
+		background-color: var(--t-pico-dropdown-hover-background-color);
+	}
+
+	:where(ul[popover] > li > :is(a, button):focus-visible) {
+		outline: var(--t-pico-outline-width) solid var(--t-pico-primary-focus);
+		outline-offset: calc(var(--t-pico-outline-width) * -1);
+	}
+}

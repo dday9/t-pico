@@ -1,0 +1,94 @@
+@layer elements {
+	:where(button) {
+		font-family: inherit;
+		margin: 0;
+		overflow: visible;
+		text-transform: none;
+	}
+
+	:where(button:not([type]), button[type="button"], button[type="reset"], button[type="submit"]) {
+		margin-block-end: var(--t-pico-spacing);
+	}
+
+	:where(a[role="button"]) {
+		display: inline-block;
+	}
+
+	:where(button, input[type="button"], input[type="reset"], input[type="submit"], [role="button"]),
+	:where(input[type="file"])::file-selector-button {
+		--t-pico-background-color: var(--t-pico-primary-background);
+		--t-pico-border-color: var(--t-pico-primary-border);
+		--t-pico-box-shadow: var(--t-pico-button-box-shadow, 0 0 0 transparent);
+		--t-pico-color: var(--t-pico-primary-inverse);
+
+		background-color: var(--t-pico-background-color);
+		border: var(--t-pico-border-width) solid var(--t-pico-border-color);
+		border-radius: var(--t-pico-border-radius);
+		box-shadow: var(--t-pico-box-shadow);
+		color: var(--t-pico-color);
+		cursor: pointer;
+		font-family: inherit;
+		font-size: 1rem;
+		font-weight: var(--t-pico-font-weight);
+		line-height: var(--t-pico-line-height);
+		outline: none;
+		padding: var(--t-pico-form-element-spacing-vertical) var(--t-pico-form-element-spacing-horizontal);
+		text-align: center;
+		text-decoration: none;
+		transition:
+			background-color var(--t-pico-transition),
+			border-color var(--t-pico-transition),
+			box-shadow var(--t-pico-transition),
+			color var(--t-pico-transition);
+		user-select: none;
+	}
+
+	:where(button, input[type="button"], input[type="reset"], input[type="submit"], [role="button"])
+		:is([aria-current]:not([aria-current="false" i], [aria-current=""]), :hover, :active, :focus),
+	:where(input[type="file"]:is(:hover, :active, :focus))::file-selector-button {
+		--t-pico-background-color: var(--t-pico-primary-hover-background);
+		--t-pico-border-color: var(--t-pico-primary-hover-border);
+		--t-pico-box-shadow: var(--t-pico-button-hover-box-shadow, 0 0 0 transparent);
+		--t-pico-color: var(--t-pico-primary-inverse);
+	}
+
+	:where(button, input[type="button"], input[type="reset"], input[type="submit"], [role="button"]):focus,
+	:where(input[type="file"]:focus)::file-selector-button {
+		--t-pico-box-shadow:
+			var(--t-pico-button-hover-box-shadow, 0 0 0 transparent),
+			0 0 0 var(--t-pico-outline-width) var(--t-pico-primary-focus);
+	}
+
+	:where(button[type="reset"], input[type="reset"]),
+	:where(input[type="file"])::file-selector-button {
+		--t-pico-background-color: var(--t-pico-secondary-background);
+		--t-pico-border-color: var(--t-pico-secondary-border);
+		--t-pico-color: var(--t-pico-secondary-inverse);
+	}
+
+	:where(button[type="reset"], input[type="reset"]):is(
+		[aria-current]:not([aria-current="false" i], [aria-current=""]),
+		:hover,
+		:active,
+		:focus
+	),
+	:where(input[type="file"]:is(:hover, :active, :focus))::file-selector-button {
+		--t-pico-background-color: var(--t-pico-secondary-hover-background);
+		--t-pico-border-color: var(--t-pico-secondary-hover-border);
+		--t-pico-color: var(--t-pico-secondary-inverse);
+	}
+
+	:where(button[type="reset"], input[type="reset"]):focus,
+	:where(input[type="file"]:focus)::file-selector-button {
+		--t-pico-box-shadow:
+			var(--t-pico-button-hover-box-shadow, 0 0 0 transparent),
+			0 0 0 var(--t-pico-outline-width) var(--t-pico-secondary-focus);
+	}
+
+	:where(button, input[type="button"], input[type="reset"], input[type="submit"]):disabled,
+	:where([role="button"][disabled]),
+	:where(fieldset:disabled) :is([role="button"]) {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}

@@ -1,0 +1,10 @@
+@layer elements {
+	:where(hr) {
+		border: 0;
+		border-block-start: 1px solid var(--t-pico-muted-border-color);
+		color: inherit;
+		height: 0;
+		margin-block: var(--t-pico-typography-spacing-vertical);
+		margin-inline: 0;
+	}
+}

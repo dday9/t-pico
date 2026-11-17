@@ -1,0 +1,98 @@
+@layer elements {
+	:where(:root, :host) {
+		--t-pico-form-element-spacing-horizontal: 1rem;
+		--t-pico-form-element-spacing-vertical: 0.75rem;
+	}
+
+	:where(input, select, textarea) {
+		--t-pico-form-element-active-background-color: light-dark(
+			var(--t-pico-white),
+			color-mix(in srgb, var(--t-pico-slate-900) 75%, var(--t-pico-slate-850))
+		);
+		--t-pico-form-element-active-border-color: var(--t-pico-primary-border);
+		--t-pico-form-element-background-color: light-dark(
+			color-mix(in srgb, var(--t-pico-slate-50) 25%, var(--t-pico-white)),
+			color-mix(in srgb, var(--t-pico-slate-850), var(--t-pico-slate-900))
+		);
+		--t-pico-form-element-border-color: light-dark(
+			var(--t-pico-slate-150),
+			var(--t-pico-slate-800)
+		);
+		--t-pico-form-element-color: light-dark(
+			var(--t-pico-zinc-850),
+			var(--t-pico-zinc-100)
+		);
+		--t-pico-form-element-disabled-opacity: 0.5;
+		--t-pico-form-element-focus-color: var(--t-pico-primary-border);
+		--t-pico-form-element-placeholder-color: light-dark(
+			var(--t-pico-muted-color),
+			var(--t-pico-zinc-400)
+		);
+		--t-pico-form-element-selected-background-color: light-dark(
+			var(--t-pico-slate-100),
+			var(--t-pico-slate-800)
+		);
+	}
+
+	:where(input, optgroup, select, textarea) {
+		font-family: inherit;
+		font-size: 1rem;
+		letter-spacing: inherit;
+		line-height: var(--t-pico-line-height);
+		margin: 0;
+	}
+
+	:where(input, select, textarea) {
+		--t-pico-background-color: var(--t-pico-form-element-background-color);
+		--t-pico-border-color: var(--t-pico-form-element-border-color);
+		--t-pico-box-shadow: none;
+		--t-pico-color: var(--t-pico-form-element-color);
+
+		background-color: var(--t-pico-background-color);
+		border: var(--t-pico-border-width) solid var(--t-pico-border-color);
+		border-radius: var(--t-pico-border-radius);
+		box-shadow: var(--t-pico-box-shadow);
+		color: var(--t-pico-color);
+		font-weight: var(--t-pico-font-weight);
+		outline: 0;
+		transition:
+			background-color var(--t-pico-transition),
+			border-color var(--t-pico-transition),
+			box-shadow var(--t-pico-transition),
+			color var(--t-pico-transition);
+	}
+
+	:where(input:not([type="checkbox"], [type="radio"]), select, textarea) {
+		margin-block-end: var(--t-pico-spacing);
+	}
+
+	:where(input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]), select, textarea) {
+		appearance: none;
+		padding: var(--t-pico-form-element-spacing-vertical) var(--t-pico-form-element-spacing-horizontal);
+	}
+
+	:where(button[form]:not([type]), form button:not([type]), button[type="submit"], input:not([type="checkbox"], [type="radio"]), select, textarea) {
+		width: 100%;
+	}
+
+	:where(input, select, textarea):disabled,
+	:where(fieldset:disabled) :is(input, select, textarea) {
+		opacity: var(--t-pico-form-element-disabled-opacity);
+		pointer-events: none;
+	}
+
+	:where(select, textarea):not([readonly]):focus,
+	:where(input:not([type="submit"], [type="button"], [type="reset"], [type="range"], [type="file"], [readonly])):focus {
+		--t-pico-box-shadow: 0 0 0 var(--t-pico-outline-width) var(--t-pico-form-element-focus-color);
+	}
+
+	:where(select, textarea):not([readonly]):is(:active, :focus),
+	:where(input):not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"], [readonly]):is(:active, :focus) {
+		--t-pico-background-color: var(--t-pico-form-element-active-background-color);
+	}
+
+	:where(select, textarea):not([readonly]):is(:active, :focus),
+	:where(input):not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]):is(:active, :focus) {
+		--t-pico-border-color: var(--t-pico-form-element-active-border-color);
+	}
+}

@@ -1,0 +1,19 @@
+@layer core {
+
+    :where([disabled], [aria-disabled="true"]) {
+        cursor: not-allowed;
+    }
+	
+	@media (prefers-reduced-motion: reduce) {
+		:where(*, *::before, *::after) {
+			animation-delay: 0ms !important;
+			animation-duration: 1ms !important;
+			animation-iteration-count: 1 !important;
+			background-attachment: scroll !important;
+			scroll-behavior: auto !important;
+			transition-delay: 0ms !important;
+			transition-duration: 0ms !important;
+		}
+	}
+
+}

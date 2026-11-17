@@ -1,0 +1,38 @@
+@layer elements {
+	:where(table) {
+		--t-pico-table-border-color: var(--t-pico-muted-border-color);
+
+		border-collapse: collapse;
+		border-spacing: 0;
+		color: var(--t-pico-color);
+		font-style: normal;
+		font-weight: var(--t-pico-font-weight);
+		margin-block: 0 var(--t-pico-typography-spacing-vertical);
+		text-indent: 0;
+		width: 100%;
+	}
+
+	:where(td, th) {
+		background-color: var(--t-pico-background-color);
+		border-block-end: var(--t-pico-border-width) solid var(--t-pico-table-border-color);
+		color: var(--t-pico-color);
+		font-weight: var(--t-pico-font-weight);
+		padding: calc(var(--t-pico-spacing) * 0.5) var(--t-pico-spacing);
+		text-align: start;
+	}
+
+
+	:where(th[scope="row"], th[scope="rowgroup"]) {
+		--t-pico-font-weight: 600;
+	}
+
+	:where(thead td, thead th, tfoot td, tfoot th) {
+		--t-pico-border-width: 0.1875rem;
+		--t-pico-font-weight: 600;
+	}
+
+	:where(tfoot td, tfoot th) {
+		border-block-end: 0;
+		border-block-start: var(--t-pico-border-width) solid var(--t-pico-table-border-color);
+	}
+}

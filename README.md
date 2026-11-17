@@ -1,256 +1,274 @@
-<p>
-  <a href="https://picocss.com" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/picocss/pico/HEAD/.github/logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/picocss/pico/HEAD/.github/logo-light.svg">
-      <img alt="Pico CSS" src="https://raw.githubusercontent.com/picocss/pico/HEAD/.github/logo-light.svg" width="auto" height="60">
-    </picture>
-  </a>
-</p>
+# T'Pico
 
-[![Github release](https://img.shields.io/github/v/release/picocss/pico?color=0172ad&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
-[![npm version](https://img.shields.io/npm/v/@picocss/pico?color=0172ad)](https://www.npmjs.com/package/@picocss/pico)
-[![License](https://img.shields.io/badge/license-MIT-%230172ad)](https://github.com/picocss/pico/blob/master/LICENSE.md)
-[![X (formerly Twitter)](https://img.shields.io/twitter/url/https/twitter.com/picocss.svg?style=social&label=Follow%20%40picocss)](https://x.com/picocss)
+**A modern, classless CSS framework for semantic HTML.**
 
-## Pico CSS is no longer maintained
+T'Pico is a fork of [Pico CSS](https://github.com/picocss/pico), based on its final v2.1.1 release. It preserves Pico's minimalist, HTML-first philosophy while rebuilding the framework with modern, modular CSS.
 
-[v2.1.1](https://github.com/picocss/pico/releases/tag/v2.1.1) is the final release.
+No JavaScript, Sass, utility classes, or custom HTML attributes are required to use the framework.
 
-**Why**<br>
-Today, AI can generate lightweight, standalone, accessible HTML with just the CSS it needs, so a Minimal CSS Framework for Semantic HTML matters less than it used to. To stay relevant, Pico CSS would need a full rewrite: plain modern CSS instead of Sass, built on features it doesn't use today (OKLCH colors, cascade layers, Popover, anchor positioning) with fallbacks for older browsers, and a native compiler that strips unused CSS and makes customization easy. That would be a different project. Pico CSS stays as it is.
+## Why the Name?
 
-**What this means**
-- Nothing breaks. [npm](https://www.npmjs.com/package/@picocss/pico), the [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) and [picocss.com](https://picocss.com) stay online for the long term.
-- The repositories are archived. No new issues, PRs or releases.
-- Pico CSS is [MIT licensed](LICENSE.md). You're free to fork it and take it further. See [community forks](https://github.com/picocss/pico/forks).
-- The Pico CSS name and logo are not covered by the MIT license. Please give your fork its own name, so users don't confuse it with the original.
+The name **T'Pico** carries forward the naming convention of **T'CSS**, a CSS project inspired in part by the Cajun culture of South Louisiana.
 
-**Thank you**<br>
-What started as a small side project ended up powering thousands of websites. Thank you to everyone who used it, opened issues, sent pull requests and wrote kind messages over the years.
+In Cajun French, *T'* (pronounced “tee”) comes from *petit*, meaning “little.” It's commonly found in affectionate nicknames like *T-Boy* or *T-Bob*, reflecting a distinctive part of Louisiana's French-speaking heritage.
 
----
+The name is a small tribute to that culture and its influence on my work. It also feels fitting for a lightweight CSS framework that embraces simplicity.
 
-## Minimal CSS Framework for Semantic HTML
+T'Pico continues that tradition while paying homage to the original Pico CSS project.
 
-A minimalist and lightweight starter kit that prioritizes semantic syntax, making every HTML element responsive and elegant by default.
+## Features
 
-Write HTML, Add Pico CSS, and Voilà!
+<dl>
+  <dt><strong>Classless by design</strong></dt>
+  <dd>Style semantic HTML elements without adding classes.</dd>
+  <dt><strong>Modern CSS</strong></dt>
+  <dd>Built using cascade layers, <code>:where()</code>, OKLCH colors, CSS custom properties, and <code>light-dark()</code>.</dd>
+  <dt><strong>20 color palettes</strong></dt>
+  <dd>Including Azure, Jade, Indigo, Pumpkin, and more.</dd>
+  <dt><strong>Light and dark themes</strong></dt>
+  <dd>Automatic color scheme support, with optional explicit selection.</dd>
+  <dt><strong>Native HTML components</strong></dt>
+  <dd>Uses browser features such as <code>&lt;dialog&gt;</code>, <code>&lt;details&gt;</code>, and the Popover API.</dd>
+  <dt><strong>CSS-only interactions</strong></dt>
+  <dd>No framework JavaScript or JavaScript fallbacks.</dd>
+  <dt><strong>Modular source</strong></dt>
+  <dd>Organized into tokens, themes, core styles, elements, and components.</dd>
+  <dt><strong>Accessibility-minded</strong></dt>
+  <dd>Built around native HTML semantics, keyboard accessibility, visible focus states, and reduced-motion preferences.</dd>
+</dl>
 
-## What’s new in v2?
+## Compatibility with Pico CSS
 
-Pico v2.0 features better accessibility, easier customization with SASS, a complete color palette, a new group component, and 20 precompiled color themes totaling over 100 combinations accessible via CDN.
+T'Pico is a complete rewrite of Pico CSS v2.1.1, not a drop-in replacement. While it preserves the original project's classless philosophy and much of its visual appearance, its architecture, components, and behavior have been substantially reworked.
 
-[Read more](https://picocss.com/docs/v2)
+As a result, some features and behaviors supported by Pico CSS may be unavailable, implemented differently, or behave differently in T'Pico. For example:
 
-## A Superpowered HTML Reset
+- **Right-to-left (RTL) layouts:** T'Pico uses modern logical CSS properties where appropriate, but does not guarantee the same RTL behavior as Pico CSS.
+- **Components:** Dropdowns, modals, offcanvas panels, and other interactive components rely on modern native browser capabilities, so their markup and behavior may differ.
+- **Customization:** T'Pico uses CSS custom properties, cascade layers, and OKLCH colors rather than Pico's Sass-based customization system.
+- **Utilities and layout:** T'Pico deliberately omits certain features, including the CSS Grid component and tooltips.
 
-With just the right amount of everything, Pico is great starting point for a clean and lightweight design system.
+T'Pico prioritizes semantic HTML, modern browser standards, and CSS-only functionality over strict backward compatibility.
 
-- Class-light and Semantic
-- Great Styles with Just CSS
-- Responsive Everything
-- Light or Dark Mode
-- Easy Customization
-- Optimized Performance
+Applications migrating from Pico CSS should review their markup, custom styles, and component behavior rather than assuming existing implementations will work unchanged.
 
-## Table of contents
+## Quick Start
 
-- [Quick start](#quick-start)
-- [Class-less version](#class-less-version)
-- [Limitations](#limitations)
-- [Documentation](#documentation)
-- [Browser Support](#browser-support)
-- [Contributing](#contributing)
-- [Copyright and license](#copyright-and-license)
-
-## Quick start
-
-There are 4 ways to get started with pico.css:
-
-### Install manually
-
-[Download Pico](https://github.com/picocss/pico/archive/refs/heads/main.zip) and link `/css/pico.min.css` in the `<head>` of your website.
+Download or build the distribution files and include the default Azure stylesheet in your document:
 
 ```html
-<link rel="stylesheet" href="css/pico.min.css">
+<link rel="stylesheet" href="dist/t-pico.min.css">
 ```
 
-### Usage from CDN
-
-Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) to link pico.css.
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-```
-
-### Install with NPM
-
-```shell
-npm install @picocss/pico
-```
-
-Or
-
-```shell
-yarn add @picocss/pico
-```
-
-Then, import Pico into your SCSS file with [@use](https://sass-lang.com/documentation/at-rules/use):
-
-```SCSS
-@use "pico";
-```
-
-### Install with Composer
-
-```shell
-composer require picocss/pico
-```
-
-### Starter HTML template
-
-```HTML
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="css/pico.min.css">
-    <title>Hello world!</title>
-  </head>
-  <body>
-    <main class="container">
-      <h1>Hello world!</h1>
-    </main>
-  </body>
-</html>
-```
-
-## Class-less version
-
-Pico provides a `.classless` version.
-
-In this version, `<header>`, `<main>`, and `<footer>` inside `<body>` act as containers to define a centered or a fluid viewport.
-
-Use the default `.classless` version if you need centered viewports:
-
-```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
-/>
-```
-
-Or use the `.fluid.classless` version if you need a fluid container:
-
-```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.min.css"
->
-```
-
-Then just write pure HTML, and it should look great:
+Then write semantic HTML:
 
 ```html
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light dark">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
-    >
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <main>
-      <h1>Hello, world!</h1>
-    </main>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hello, T'Pico!</title>
+	<link rel="stylesheet" href="dist/t-pico.min.css">
+</head>
+<body>
+	<header>
+		<nav aria-label="Main navigation">
+			<a href="/" aria-current="page">Home</a>
+			<a href="/about">About</a>
+			<a href="/contact">Contact</a>
+		</nav>
+	</header>
+
+	<main>
+		<h1>Hello, T'Pico!</h1>
+		<p>Semantic HTML, styled automatically.</p>
+
+		<article>
+			<header>
+				<h2>Welcome</h2>
+			</header>
+			<p>No classes required.</p>
+			<footer>
+				<a href="/about">Learn more</a>
+			</footer>
+		</article>
+	</main>
+</body>
 </html>
 ```
 
-## Limitations
+## Color Palettes
 
-Pico CSS can be used without custom CSS for quick or small projects. However, it’s designed as a starting point, like a “reset CSS on steroids”. As Pico does not integrate any helpers or utilities `.classes`, this minimal CSS framework requires SCSS or CSS knowledge to build large projects.
+T'Pico includes 20 color palettes:
 
-[Read more](https://picocss.com/docs/usage-scenarios)
+Amber, Azure, Blue, Cyan, Fuchsia, Green, Grey, Indigo, Jade, Lime, Orange, Pink, Pumpkin, Purple, Red, Sand, Slate, Violet, Yellow, and Zinc.
 
-## Documentation
+Azure is the default palette. To use a different palette, replace the stylesheet:
 
-**Getting started**
+```html
+<link rel="stylesheet" href="dist/t-pico.jade.min.css">
+```
 
-- [Quick start](https://picocss.com/docs)
-- [Version picker `New`](https://picocss.com/docs/version-picker)
-- [Color schemes](https://picocss.com/docs/color-schemes)
-- [Class-less version](https://picocss.com/docs/classless)
-- [Conditional styling `New`](https://picocss.com/docs/conditional)
-- [RTL](https://picocss.com/docs/rtl)
+Each distribution file includes the complete framework and its selected palette. Only one stylesheet is necessary.
 
-**Customization**
+### Light and Dark Themes
 
-- [CSS Variables](https://picocss.com/docs/css-variables)
-- [Sass](https://picocss.com/docs/sass)
-- [Colors `New`](https://picocss.com/docs/colors)
+T'Pico supports automatic color schemes based on the user's system preferences.
 
-**Layout**
+To explicitly select a theme, use the `data-theme` attribute on the root element:
 
-- [Container](https://picocss.com/docs/container)
-- [Landmarks & section](https://picocss.com/docs/landmarks-section)
-- [Grid](https://picocss.com/docs/grid)
-- [Overflow auto `New`](https://picocss.com/docs/overflow-auto)
+```html
+<html lang="en" data-theme="light">
+```
 
-**Content**
+Or:
 
-- [Typography](https://picocss.com/docs/typography)
-- [Link](https://picocss.com/docs/link)
-- [Button](https://picocss.com/docs/button)
-- [Table](https://picocss.com/docs/table)
+```html
+<html lang="en" data-theme="dark">
+```
 
-**Forms**
+Without an explicit theme, T'Pico uses the system color preference.
 
-- [Overview](https://picocss.com/docs/forms)
-- [Input](https://picocss.com/docs/forms/input)
-- [Textarea](https://picocss.com/docs/forms/textarea)
-- [Select](https://picocss.com/docs/forms/select)
-- [Checkboxes](https://picocss.com/docs/forms/checkboxes)
-- [Radios](https://picocss.com/docs/forms/radios)
-- [Switch](https://picocss.com/docs/forms/switch)
-- [Range](https://picocss.com/docs/forms/range)
+## Components
 
-**Components**
+T'Pico provides styling for native HTML elements and semantic component patterns.
 
-- [Accordion](https://picocss.com/docs/accordion)
-- [Card](https://picocss.com/docs/card)
-- [Dropdown](https://picocss.com/docs/dropdown)
-- [Group `New`](https://picocss.com/docs/group)
-- [Loading](https://picocss.com/docs/loading)
-- [Modal](https://picocss.com/docs/modal)
-- [Nav](https://picocss.com/docs/nav)
-- [Progress](https://picocss.com/docs/progress)
-- [Tooltip](https://picocss.com/docs/tooltip)
+| Component | HTML |
+|---|---|
+| Accordion | `<details>` and `<summary>` |
+| Card | `<article>`, `<header>`, and `<footer>` |
+| Dropdown | Popover API with `<button>` and `<ul>` |
+| Group | `[role="group"]` |
+| Loading | `aria-busy="true"` |
+| Modal | `<dialog>` |
+| Navigation | `<nav>`, `<ul>`, and `<ol>` |
+| Offcanvas | `<dialog>` containing `<aside>` |
+| Switch | `<input type="checkbox" role="switch">` |
+| Toolbar | `<menu>` |
 
-**About**
+The framework also styles typography, forms, buttons, tables, code, progress indicators, meters, and other native HTML elements.
 
-- [What’s new in v2?](https://picocss.com/docs/v2)
-- [Mission](https://picocss.com/docs/mission)
-- [Usage scenarios](https://picocss.com/docs/usage-scenarios)
-- [Brand](https://picocss.com/docs/brand)
-- [Built With](https://picocss.com/docs/built-with)
+### Example: Accordion
+
+```html
+<details>
+	<summary>Frequently Asked Question</summary>
+	<p>This content can be expanded or collapsed.</p>
+</details>
+```
+
+### Example: Dropdown
+
+```html
+<button type="button" popovertarget="example-dropdown">
+	Options
+</button>
+
+<ul id="example-dropdown" popover>
+	<li><a href="#profile">Profile</a></li>
+	<li><a href="#settings">Settings</a></li>
+	<li><a href="#logout">Log out</a></li>
+</ul>
+```
+
+### Example: Modal
+
+```html
+<button type="button" command="show-modal" commandfor="example-modal">
+	Open Modal
+</button>
+
+<dialog id="example-modal" closedby="any" aria-labelledby="modal-title">
+	<article>
+		<header>
+			<h2 id="modal-title">Example Modal</h2>
+			<button
+				type="button"
+				command="request-close"
+				commandfor="example-modal"
+				aria-label="Close"
+			></button>
+		</header>
+
+		<p>This modal uses the native HTML Dialog API.</p>
+	</article>
+</dialog>
+```
+
+These components rely on native browser behavior rather than JavaScript implementations.
+
+## Architecture
+
+T'Pico uses plain CSS, organized into a layered architecture.
+
+```text
+src/
+├── core/
+├── tokens/
+├── themes/
+├── elements/
+├── components/
+├── palettes/
+├── t-pico.base.css
+├── t-pico.css
+└── t-pico.*.css
+
+dist/
+└── t-pico*.min.css
+```
+
+The framework uses the following cascade layer order:
+
+```css
+@layer reset, tokens, themes, core, elements, components;
+```
+
+Each palette-specific entry point imports the shared base stylesheet and then applies its selected palette.
+
+### Customization
+
+T'Pico exposes CSS custom properties using the `--t-pico-` prefix. These provide control over colors, typography, spacing, borders, and other design values.
+
+Because the framework uses cascade layers and low-specificity selectors, application-specific CSS can be added without unnecessarily complex selectors.
 
 ## Browser Support
 
-Pico CSS is designed and tested for the latest stable Chrome, Firefox, Edge, and Safari releases. It does not support any version of IE, including IE 11.
+T'Pico targets current evergreen browsers, including Chrome, Edge, Firefox, and Safari.
 
-## Contributing
+Some components depend on newer CSS and HTML features, including the Popover API, CSS Anchor Positioning, and native dialog commands. Availability and animation behavior may vary between browsers.
 
-Contributions are closed. This repository is archived.
+There are no JavaScript fallbacks for unsupported browser features.
 
-## Copyright and license
+## Philosophy and Limitations
 
-Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md).
+T'Pico is intended to be a lightweight starting point for semantic HTML, not a complete UI application framework.
+
+It deliberately does not include:
+
+- Utility classes or a general-purpose CSS Grid system.
+- CSS-generated tooltips.
+- JavaScript-based components or compatibility fallbacks.
+- A Sass-based customization system.
+
+Complex application layouts and interactions may require additional application-specific CSS or JavaScript.
+
+The framework's accessibility-oriented defaults do not replace appropriate semantic markup, accessible content, or application-level accessibility testing.
+
+## Documentation
+
+Detailed guides, component examples, and customization information are available in the [T'Pico Wiki](https://github.com/dday9/t-pico/wiki).
+
+## Credits
+
+T'Pico is an independent fork of [Pico CSS](https://github.com/picocss/pico), originally developed by the PicoCSS contributors.
+
+T'Pico builds upon Pico CSS v2.1.1 but is independently developed and is not affiliated with or endorsed by the original project.
+
+The Pico CSS name and logo remain associated with the original project.
+
+## License
+
+T'Pico is distributed under the [MIT License](LICENSE.md).
+
+The project retains applicable copyright and license notices from the original Pico CSS project.

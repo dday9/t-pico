@@ -1,0 +1,12 @@
+@layer elements {
+	:where(ol) {
+		color: var(--t-pico-color);
+		font-style: normal;
+		font-weight: var(--t-pico-font-weight);
+		margin-block: 0 var(--t-pico-typography-spacing-vertical);
+	}
+
+	:where(ol li) {
+		margin-block-end: calc(var(--t-pico-typography-spacing-vertical) * 0.25);
+	}
+}

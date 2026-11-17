@@ -1,0 +1,18 @@
+@layer elements {
+	:where(input) {
+		overflow: visible;
+	}
+
+	:where(input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"])) {
+		height: calc(
+			1rem * var(--t-pico-line-height) +
+			var(--t-pico-form-element-spacing-vertical) * 2 +
+			var(--t-pico-border-width) * 2
+		);
+	}
+
+	:where(input:not([type="checkbox"], [type="radio"]), select, textarea) {
+		width: 100%;
+	}
+
+}

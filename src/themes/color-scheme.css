@@ -1,0 +1,17 @@
+@layer themes {
+	:where(:root, :host, [data-theme="auto"]) {
+		color-scheme: light dark;
+	}
+
+	:where([data-theme="light"]) {
+		color-scheme: light;
+	}
+
+	:where([data-theme="dark"]) {
+		color-scheme: dark;
+	}
+
+	:where([data-theme]) {
+		color: var(--t-pico-color);
+	}
+}

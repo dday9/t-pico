@@ -1,0 +1,35 @@
+@layer elements {
+	:where(a:not([role="button"]), [role="link"]) {
+		--t-pico-background-color: transparent;
+		--t-pico-color: var(--t-pico-primary);
+		--t-pico-text-decoration: underline;
+		--t-pico-underline: var(--t-pico-primary-underline);
+
+		background-color: var(--t-pico-background-color);
+		color: var(--t-pico-color);
+		outline: 0;
+		text-decoration: var(--t-pico-text-decoration);
+		text-decoration-color: var(--t-pico-underline);
+		text-underline-offset: 0.125em;
+		transition:
+			background-color var(--t-pico-transition),
+			color var(--t-pico-transition),
+			text-decoration var(--t-pico-transition),
+			box-shadow var(--t-pico-transition);
+	}
+
+	:where(a:not([role="button"]), [role="link"]):is(
+		[aria-current]:not([aria-current="false" i]):not([aria-current=""]),
+		:hover,
+		:active,
+		:focus
+	) {
+		--t-pico-color: var(--t-pico-primary-hover);
+		--t-pico-text-decoration: underline;
+		--t-pico-underline: var(--t-pico-primary-hover-underline);
+	}
+
+	:where(a:not([role="button"]), [role="link"]):focus-visible {
+		box-shadow: 0 0 0 var(--t-pico-outline-width) var(--t-pico-primary-focus);
+	}
+}

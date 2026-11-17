@@ -1,0 +1,132 @@
+@layer themes {
+	:where(:root, :host) {
+		/* Document */
+		--t-pico-background-color: light-dark(
+			var(--t-pico-white),
+			color-mix(in srgb, var(--t-pico-slate-950), var(--t-pico-slate-900))
+		);
+		--t-pico-color: light-dark(
+			var(--t-pico-zinc-750),
+			var(--t-pico-zinc-200)
+		);
+
+		/* Muted */
+		--t-pico-muted-border-color: light-dark(
+			color-mix(in srgb, var(--t-pico-slate-100), var(--t-pico-slate-50)),
+			var(--t-pico-slate-850)
+		);
+		--t-pico-muted-color: light-dark(
+			var(--t-pico-zinc-550),
+			var(--t-pico-zinc-450)
+		);
+
+		/* Primary */
+		--t-pico-primary: light-dark(
+			var(--t-pico-accent-primary-light),
+			var(--t-pico-accent-primary-dark)
+		);
+		--t-pico-primary-background: light-dark(
+			var(--t-pico-accent-primary-background-light),
+			var(--t-pico-accent-primary-background-dark)
+		);
+		--t-pico-primary-border: var(--t-pico-primary-background);
+		--t-pico-primary-focus: light-dark(
+			var(--t-pico-accent-primary-focus-light),
+			var(--t-pico-accent-primary-focus-dark)
+		);
+		--t-pico-primary-hover: light-dark(
+			var(--t-pico-accent-primary-hover-light),
+			var(--t-pico-accent-primary-hover-dark)
+		);
+		--t-pico-primary-hover-background: light-dark(
+			var(--t-pico-accent-primary-hover-background-light),
+			var(--t-pico-accent-primary-hover-background-dark)
+		);
+		--t-pico-primary-hover-border: var(--t-pico-primary-hover-background);
+		--t-pico-primary-hover-underline: var(--t-pico-primary-hover);
+		--t-pico-primary-inverse: light-dark(
+			var(--t-pico-accent-primary-inverse-light),
+			var(--t-pico-accent-primary-inverse-dark)
+		);
+		--t-pico-primary-underline: light-dark(
+			var(--t-pico-accent-primary-underline-light),
+			var(--t-pico-accent-primary-underline-dark)
+		);
+
+		/* Secondary */
+		--t-pico-secondary: light-dark(
+			var(--t-pico-slate-550),
+			var(--t-pico-zinc-350)
+		);
+		--t-pico-secondary-background: var(--t-pico-slate-600);
+		--t-pico-secondary-border: var(--t-pico-secondary-background);
+		--t-pico-secondary-focus: light-dark(
+			color-mix(in srgb, var(--t-pico-slate-550) 25%, transparent),
+			color-mix(in srgb, var(--t-pico-slate-350) 25%, transparent)
+		);
+		--t-pico-secondary-hover: light-dark(
+			var(--t-pico-slate-650),
+			var(--t-pico-zinc-250)
+		);
+		--t-pico-secondary-hover-background: light-dark(
+			var(--t-pico-slate-650),
+			var(--t-pico-slate-550)
+		);
+		--t-pico-secondary-hover-border: var(--t-pico-secondary-hover-background);
+		--t-pico-secondary-hover-underline: var(--t-pico-secondary-hover);
+		--t-pico-secondary-inverse: var(--t-pico-white);
+		--t-pico-secondary-underline: light-dark(
+			color-mix(in srgb, var(--t-pico-slate-550) 50%, transparent),
+			color-mix(in srgb, var(--t-pico-zinc-350) 50%, transparent)
+		);
+
+		/* Contrast */
+		--t-pico-contrast: light-dark(
+			var(--t-pico-slate-900),
+			var(--t-pico-slate-100)
+		);
+		--t-pico-contrast-background: light-dark(
+			var(--t-pico-slate-900),
+			var(--t-pico-slate-50)
+		);
+		--t-pico-contrast-border: var(--t-pico-contrast-background);
+		--t-pico-contrast-focus: light-dark(
+			color-mix(in srgb, var(--t-pico-slate-550) 25%, transparent),
+			color-mix(in srgb, var(--t-pico-slate-150) 25%, transparent)
+		);
+		--t-pico-contrast-hover: light-dark(
+			var(--t-pico-black),
+			var(--t-pico-white)
+		);
+		--t-pico-contrast-hover-background: var(--t-pico-contrast-hover);
+		--t-pico-contrast-hover-border: var(--t-pico-contrast-hover-background);
+		--t-pico-contrast-hover-underline: light-dark(
+			var(--t-pico-secondary-hover),
+			var(--t-pico-contrast-hover)
+		);
+		--t-pico-contrast-inverse: light-dark(
+			var(--t-pico-white),
+			var(--t-pico-black)
+		);
+		--t-pico-contrast-underline: light-dark(
+			color-mix(in srgb, var(--t-pico-slate-900) 50%, transparent),
+			color-mix(in srgb, var(--t-pico-slate-100) 50%, transparent)
+		);
+
+		/* Selection */
+		--t-pico-text-selection-color: light-dark(
+			var(--t-pico-accent-text-selection-light),
+			var(--t-pico-accent-text-selection-dark)
+		);
+
+		/* Status */
+		--t-pico-invalid-color: light-dark(
+			color-mix(in srgb, var(--t-pico-red-500), var(--t-pico-zinc-750)),
+			color-mix(in srgb, var(--t-pico-red-500), var(--t-pico-zinc-200))
+		);
+		--t-pico-valid-color: light-dark(
+			color-mix(in srgb, var(--t-pico-jade-450), var(--t-pico-zinc-750)),
+			var(--t-pico-jade-350)
+		);
+	}
+}

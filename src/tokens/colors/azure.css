@@ -1,0 +1,24 @@
+@layer tokens {
+    :root, :host {
+        --t-pico-azure-950: oklch(17.53% 0.0312 242.2);
+        --t-pico-azure-900: oklch(22.60% 0.0446 242.8);
+        --t-pico-azure-850: oklch(26.94% 0.0582 242.0);
+        --t-pico-azure-800: oklch(31.19% 0.0722 242.6);
+        --t-pico-azure-750: oklch(35.55% 0.0829 241.5);
+        --t-pico-azure-700: oklch(39.89% 0.0938 241.8);
+        --t-pico-azure-650: oklch(44.12% 0.1044 242.1);
+        --t-pico-azure-600: oklch(48.57% 0.1149 242.1);
+        --t-pico-azure-550: oklch(52.90% 0.1254 242.0);
+        --t-pico-azure-500: oklch(57.16% 0.1355 242.0);
+        --t-pico-azure-450: oklch(61.39% 0.1465 242.4);
+        --t-pico-azure-400: oklch(65.79% 0.1564 242.2);
+        --t-pico-azure-350: oklch(70.72% 0.1679 242.1);
+        --t-pico-azure-300: oklch(74.33% 0.1426 244.4);
+        --t-pico-azure-250: oklch(78.57% 0.1153 246.7);
+        --t-pico-azure-200: oklch(82.84% 0.0863 248.9);
+        --t-pico-azure-150: oklch(87.23% 0.0607 249.3);
+        --t-pico-azure-100: oklch(91.39% 0.0369 250.8);
+        --t-pico-azure-50: oklch(95.73% 0.0165 250.8);
+        --t-pico-azure: var(--t-pico-azure-550);
+    }
+}

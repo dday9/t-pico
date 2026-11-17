@@ -1,0 +1,22 @@
+@layer elements {
+	:where(input[type="radio"]) {
+		border-radius: 50%;
+	}
+
+	:where(input[type="radio"]:checked) {
+		--t-pico-background-color: var(--t-pico-primary-inverse);
+		--t-pico-border-color: var(--t-pico-primary-border);
+
+		background-color: var(--t-pico-background-color);
+		background-image: none;
+		border-width: 0.35em;
+	}
+
+	:where(input[type="radio"][aria-invalid="false"]:checked) {
+		--t-pico-border-color: var(--t-pico-form-element-valid-border-color);
+	}
+
+	:where(input[type="radio"][aria-invalid="true"]:checked) {
+		--t-pico-border-color: var(--t-pico-form-element-invalid-border-color);
+	}
+}

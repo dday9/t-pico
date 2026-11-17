@@ -1,0 +1,5 @@
+@layer elements {
+	:where(section) {
+		margin-block-end: var(--t-pico-block-spacing-vertical);
+	}
+}

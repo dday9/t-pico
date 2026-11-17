@@ -1,0 +1,21 @@
+@layer tokens {
+	:root, :host {
+		--t-pico-accent-primary-background-dark: var(--t-pico-green-500);
+		--t-pico-accent-primary-background-light: var(--t-pico-green-500);
+		--t-pico-accent-primary-dark: var(--t-pico-green-350);
+		--t-pico-accent-primary-focus-dark: color-mix(in srgb, var(--t-pico-green-350) 37.5%, transparent);
+		--t-pico-accent-primary-focus-light: color-mix(in srgb, var(--t-pico-green-400) 50%, transparent);
+		--t-pico-accent-primary-hover-background-dark: var(--t-pico-green-450);
+		--t-pico-accent-primary-hover-background-light: var(--t-pico-green-550);
+		--t-pico-accent-primary-hover-dark: var(--t-pico-green-250);
+		--t-pico-accent-primary-hover-light: var(--t-pico-green-650);
+		--t-pico-accent-primary-inverse-dark: var(--t-pico-white);
+		--t-pico-accent-primary-inverse-light: var(--t-pico-white);
+		--t-pico-accent-primary-light: var(--t-pico-green-550);
+		--t-pico-accent-primary-underline-dark: color-mix(in srgb, var(--t-pico-green-350) 50%, transparent);
+		--t-pico-accent-primary-underline-light: color-mix(in srgb, var(--t-pico-green-550) 50%, transparent);
+		--t-pico-accent-switch-thumb-box-shadow: 0 0 0 transparent;
+		--t-pico-accent-text-selection-dark: color-mix(in srgb, var(--t-pico-green-350) 18.75%, transparent);
+		--t-pico-accent-text-selection-light: color-mix(in srgb, var(--t-pico-green-400) 25%, transparent);
+	}
+}

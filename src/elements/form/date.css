@@ -1,0 +1,11 @@
+@layer elements {
+	:where(
+		input[type="date"],
+		input[type="datetime-local"],
+		input[type="month"],
+		input[type="time"],
+		input[type="week"]
+	) {
+		min-width: 0;
+	}
+}

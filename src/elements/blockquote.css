@@ -1,0 +1,21 @@
+@layer elements {
+	:where(blockquote) {
+		--t-pico-blockquote-border-color: var(--t-pico-muted-border-color);
+		--t-pico-blockquote-footer-color: var(--t-pico-muted-color);
+
+		border-inline-end: none;
+		border-inline-start: 0.25rem solid var(--t-pico-blockquote-border-color);
+		color: var(--t-pico-color);
+		display: block;
+		font-style: normal;
+		font-weight: var(--t-pico-font-weight);
+		margin-block: var(--t-pico-typography-spacing-vertical);
+		margin-inline: 0;
+		padding: var(--t-pico-spacing);
+	}
+
+	:where(blockquote > footer) {
+		color: var(--t-pico-blockquote-footer-color);
+		margin-block-start: calc(var(--t-pico-typography-spacing-vertical) * 0.5);
+	}
+}

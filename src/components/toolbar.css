@@ -1,0 +1,108 @@
+@layer components {
+	:where(menu > li > :is(button, input[type="button" i], input[type="reset" i], input[type="submit" i], a[href], label:has(> input[type="checkbox"]))) {
+		border-radius: 5rem;
+		margin: 0;
+		width: auto;
+	}
+
+	:where(menu > li > :is(a[href], label:has(> input[type="checkbox"]))) {
+		align-items: center;
+		background-color: var(--t-pico-primary-background);
+		border: var(--t-pico-border-width) solid var(--t-pico-primary-border);
+		box-shadow: none;
+		color: var(--t-pico-primary-inverse);
+		cursor: pointer;
+		display: inline-flex;
+		font-family: inherit;
+		font-size: 1rem;
+		font-weight: var(--t-pico-font-weight);
+		justify-content: center;
+		line-height: var(--t-pico-line-height);
+		padding: var(--t-pico-form-element-spacing-vertical) var(--t-pico-form-element-spacing-horizontal);
+		text-align: center;
+		text-decoration: none;
+		transition: background-color var(--t-pico-transition), border-color var(--t-pico-transition), box-shadow var(--t-pico-transition), color var(--t-pico-transition);
+		user-select: none;
+	}
+
+	:where(menu > li > a[href]:is(:hover, :focus)) {
+		background-color: var(--t-pico-primary-hover-background);
+		border-color: var(--t-pico-primary-hover-border);
+		color: var(--t-pico-primary-inverse);
+	}
+
+	:where(menu > li > a[href]:focus-visible) {
+		box-shadow: 0 0 0 var(--t-pico-outline-width) var(--t-pico-primary-focus);
+	}
+
+	:where(menu > li > label:has(> input[type="checkbox"])) {
+		background-color: var(--t-pico-secondary-background);
+		border-color: var(--t-pico-secondary-border);
+		color: var(--t-pico-secondary-inverse);
+	}
+
+	:where(menu > li > label:has(> input[type="checkbox"]):hover) {
+		background-color: var(--t-pico-secondary-hover-background);
+		border-color: var(--t-pico-secondary-hover-border);
+	}
+
+	:where(menu > li > label:has(> input[type="checkbox"]:checked)) {
+		background-color: var(--t-pico-primary-background);
+		border-color: var(--t-pico-primary-border);
+		color: var(--t-pico-primary-inverse);
+	}
+
+	:where(menu > li > label:has(> input[type="checkbox"]:checked):hover) {
+		background-color: var(--t-pico-primary-hover-background);
+		border-color: var(--t-pico-primary-hover-border);
+	}
+
+	:where(menu > li > label:has(> input[type="checkbox"]:focus-visible)) {
+		box-shadow: 0 0 0 var(--t-pico-outline-width) var(--t-pico-primary-focus);
+	}
+
+	:where(menu > li > label:has(> input[type="checkbox"]:disabled)) {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+	:where(menu > li > label > input[type="checkbox"]) {
+		block-size: 1px;
+		clip-path: inset(50%);
+		inline-size: 1px;
+		margin: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+
+	:where(menu > li > label > input[type="checkbox"] + span + span) {
+		display: none;
+	}
+
+	:where(menu > li > label:has(> input[type="checkbox"]:checked) > input[type="checkbox"] + span) {
+		display: none;
+	}
+
+	:where(menu > li > label:has(> input[type="checkbox"]:checked) > input[type="checkbox"] + span + span) {
+		display: inline;
+	}
+
+	@media (forced-colors: active) {
+		:where(menu > li > :is(a[href], label:has(> input[type="checkbox"]))) {
+			background-color: ButtonFace;
+			border-color: ButtonText;
+			color: ButtonText;
+		}
+
+		:where(menu > li > label:has(> input[type="checkbox"]:checked)) {
+			background-color: Highlight;
+			border-color: Highlight;
+			color: HighlightText;
+		}
+
+		:where(menu > li > :is(a[href]:focus-visible, label:has(> input[type="checkbox"]:focus-visible))) {
+			outline: 2px solid Highlight;
+			outline-offset: 2px;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+@layer elements {
+	:where(abbr[title]) {
+		border-block-end: 1px dotted;
+		cursor: help;
+		text-decoration: none;
+	}
+}

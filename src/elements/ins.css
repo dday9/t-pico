@@ -1,0 +1,8 @@
+@layer elements {
+	:where(ins) {
+		--t-pico-ins-color: var(--t-pico-valid-color);
+
+		color: var(--t-pico-ins-color);
+		text-decoration: none;
+	}
+}

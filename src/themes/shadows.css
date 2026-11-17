@@ -1,0 +1,17 @@
+@layer themes {
+	:where(:root, :host) {
+		--t-pico-shadow-color: light-dark(
+			var(--t-pico-slate-400),
+			color-mix(in srgb, var(--t-pico-black), var(--t-pico-slate-950))
+		);
+
+		--t-pico-box-shadow:
+			0.0145rem 0.029rem 0.174rem color-mix(in srgb, var(--t-pico-shadow-color) 1.698%, transparent),
+			0.0335rem 0.067rem 0.402rem color-mix(in srgb, var(--t-pico-shadow-color) 2.4%, transparent),
+			0.0625rem 0.125rem 0.75rem color-mix(in srgb, var(--t-pico-shadow-color) 3%, transparent),
+			0.1125rem 0.225rem 1.35rem color-mix(in srgb, var(--t-pico-shadow-color) 3.6%, transparent),
+			0.2085rem 0.417rem 2.502rem color-mix(in srgb, var(--t-pico-shadow-color) 4.302%, transparent),
+			0.5rem 1rem 6rem color-mix(in srgb, var(--t-pico-shadow-color) 6%, transparent),
+			0 0 0 0.0625rem color-mix(in srgb, var(--t-pico-shadow-color) 1.5%, transparent);
+	}
+}

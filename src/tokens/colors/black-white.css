@@ -1,0 +1,6 @@
+@layer tokens {
+    :root, :host {
+        --t-pico-black: oklch(0.00% 0.0000 0.0);
+        --t-pico-white: oklch(100.00% 0.0000 89.9);
+	}
+}

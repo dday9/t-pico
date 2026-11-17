@@ -1,0 +1,10 @@
+@layer elements {
+	:where(h3) {
+		--t-pico-color: var(--t-pico-h3-color);
+		--t-pico-font-size: 1.5rem;
+		--t-pico-font-weight: 700;
+		--t-pico-h3-color: light-dark(var(--t-pico-zinc-700), var(--t-pico-zinc-200));
+		--t-pico-line-height: 1.175;
+		--t-pico-typography-spacing-top: 2.25rem;
+	}
+}
